@@ -1,0 +1,5 @@
+---
+# vars file for haproxy
+
+software: "haproxy"
+port: 8080
