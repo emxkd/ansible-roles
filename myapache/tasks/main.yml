@@ -1,0 +1,19 @@
+---
+# tasks file for myapache
+
+- name: "software installation"
+  package:
+    name: "{{ name }}"
+    state: present
+
+- name: "copy"
+  template:
+    src: "/root/index.html"
+    dest: "/var/www/html/index.html"
+  notify: "service restart"
+
+- name: "service start"
+  service:
+    name: "{{ name }}"
+    state: started
+ 
